@@ -85,6 +85,10 @@ li {
 .page-title:hover {
     color: #04010a; /* Cor ao passar o mouse */
 }
+.band-box {
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o conteúdo */
+    background-position: center; /* Centraliza a imagem */
+}
 
 .band-box a {
     text-decoration: none;
@@ -94,19 +98,21 @@ li {
 
 .band-boxes {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .band-box {
-    flex: 1 1 calc(33.33% - 20px);
-    margin: 10px;
-    border: 1px solid #9fa0a7;
-    border-radius: 5px;
-    text-align: center;
-    padding: 20px;
-    text-decoration: none;
-    background-size: cover;
-    background-position: center;
+    width: 150px; /* Largura das caixas */
+    height: 150px; /* Altura das caixas */
+    border-radius: 50%; /* Torna as caixas de playlist redondas */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse as bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 10px; /* Espaçamento entre as caixas */
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    display: flex; /* Para centralizar verticalmente */
+    justify-content: center; /* Para centralizar verticalmente */
+    align-items: center; /* Para centralizar verticalmente */
 }
 
 .band-box:hover {
@@ -118,16 +124,32 @@ li {
 }
 
 .band-box:nth-child(1) {
-    background-image: url('./img/pexels-pixel-krd-10352379\ \(1\).jpg'); /* Substitua 'imagem1.jpg' pelo caminho real da imagem para The Beatles */
+    background-image: url('./img/thebeatles.jpg'); /* Substitua 'imagem1.jpg' pelo caminho real da imagem para The Beatles */
 }
 
 .band-box:nth-child(2) {
-    background-image: url('imagem2.jpg'); /* Substitua 'imagem2.jpg' pelo caminho real da imagem para Led Zeppelin */
+    background-image: url('./img/ledzeppelin.jpg'); /* Substitua 'imagem2.jpg' pelo caminho real da imagem para Led Zeppelin */
 }
 
 .band-box:nth-child(3) {
-    background-image: url('imagem3.jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
+    background-image: url('./img/Queen.jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
 }
+.band-box:nth-child(4) {
+    background-image: url('./img/Guns\ N\'\ Roses\ Logo.jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
+}
+.band-box:nth-child(5) {
+    background-image: url('./img/ACDC\ \(1\).jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
+}
+.band-box:nth-child(6) {
+    background-image: url('./img/Rolling\ Stones\ Tour\ 1978\ Patch\ 11-inch\ Over-Sized\ Large\ Patches\ Memorabilia\ Logo\ \ _\ eBay.jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
+}
+.band-box:nth-child(7) {
+    background-image: url('./img/Metallica.jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
+}
+.band-box:nth-child(8) {
+    background-image: url('./img/BLACK\ SABBATH.jpg');
+}
+
 
 /* Adicione estilos para as outras bandas da mesma maneira */
 /* estilo playlist*/
