@@ -6,61 +6,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Music</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-   <div class="player">
-       <div class="wrapper">
-           <div class="details">
-               <div class="now-playing">PLAYING x OF y</div>
-               <div class="track-art"></div>
-               <div class="track-name">Track Name</div>
-               <div class="track-artist">Track Artist</div>
-           </div>
-
-           <div class="slider_container">
-               <div class="current-time">00:00</div>
-                <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
-                <div class="total-duration">00:00</div>
-           </div>
-
-           <div class="slider_container">
-               <i class="fa fa-volume-down"></i>
-                <input type="range" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
-                <i class="fa fa-volume-up"></i>
-           </div>
-
-           <div class="buttons">
-               <div class="random-track" onclick="randomTrack()">
-                   <i class="fas fa-random fa-2x" title="random"></i>
-               </div>
-               <div class="prev-track" onclick="prevTrack()">
-                    <i class="fa fa-step-backward fa-2x"></i>
+    <div class="container">
+        <div class="user-section">
+            <!-- Seção do Usuário -->
+            <img src="./img/Andean_Moura(IA).jfif" alt="User Image">
+        </div>
+        
+        <div class="content">
+            <div class="title-section">
+                <!-- Seção do Título -->
+                <h1 class="page-title">Dev Music</h1> <!-- Título da Página -->
+            </div>
+            
+            <div class="best-songs-section">
+                <!-- Seção das Melhores Músicas -->
+                <h2><a href="link-para-melhores-musicas.html">Melhores Músicas</a></h2>
+                <ul id="best-songs-list">
+                    <!-- As melhores músicas serão adicionadas dinamicamente pelo JavaScript -->
+                </ul>
+            </div>
+            
+            <div class="playlist-section">
+                <h2 class="playlist-title"><a href="link-para-playlists.html">Playlists</a></h2>
+                <div class="playlist-boxes">
+                    <!-- Conteúdo das playlists -->
                 </div>
-                <div class="playpause-track" onclick="playpauseTrack()">
-                    <i class="fa fa-play-circle fa-5x"></i>
-                </div>
-                <div class="next-track" onclick="nextTrack()">
-                    <i class="fa fa-step-forward fa-2x"></i>
-                </div>
-                <div class="repeat-track" onclick="repeatTrack()">
-                    <i class="fa fa-repeat fa-2x" title="repeat"></i>
-                </div>
-           </div>
+            </div>
+            
+            
+            
+            <!-- Caixas para as Bandas -->
+            <div class="band-boxes">
+                <a href="playlist-the-beatles.html" class="band-box" target="_blank">
+                    <h3>The Beatles</h3>
+                </a>
+                <a href="playlist-led-zeppelin.html" class="band-box" target="#led zeppelim">
+                    <h3>Led Zeppelin</h3>
+                </a>
+                <a href="playlist-queen.html" class="band-box" target="_blank">
+                    <h3>Queen</h3>
+                </a>
+                <a href="playlist-guns-n-roses.html" class="band-box" target="_blank">
+                    <h3>Guns N' Roses</h3>
+                </a>
+                <a href="playlist-acdc.html" class="band-box" target="_blank">
+                    <h3>AC/DC</h3>
+                </a>
+                <a href="playlist-the-rolling-stones.html" class="band-box" target="_blank">
+                    <h3>The Rolling Stones</h3>
+                </a>
+                <a href="playlist-metallica.html" class="band-box" target="_blank">
+                    <h3>Metallica</h3>
+                </a>
+                <a href="playlist-black-sabbath.html" class="band-box" target="_blank">
+                    <h3>Black Sabbath</h3>
+                </a>
+            </div>
+            
+            <!-- Nova seção para Novos Singles -->
+            <div class="new-singles-section">
+                <h2>New Singles</h2>
+                <p>Novos singles serão adicionados em breve.</p>
+            </div>
+            
+            <!-- Seção para Most Played -->
+           <!-- Seção para Most Played -->
+           <div class="most-played-section">
+            <h2>Most Played</h2>
+            <div class="artist-boxes">
+                <a href="link-para-artista-1.html" class="artist-box">
+                    <img src="./img/Andean_Moura(IA).jfif" alt="Artista 1">
+                    <h3>Artista 1</h3>
+                </a>
+                <a href="link-para-artista-2.html" class="artist-box">
+                    <img src="./img/pexels-pixel-krd-10352379 (1).jpg" alt="Artista 2">
+                    <h3>Artista 2</h3>
+                </a>
+                <a href="link-para-artista-3.html" class="artist-box">
+                    <img src="./img/vinil.png.jpg" alt="Artista 3">
+                    <h3>Artista 3</h3>
+                </a>
+            </div>
+        </div>
+        
 
-            <div id="wave">
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-                <span class="stroke"></span>
-            </div>  
-       </div>
-   </div>
+        </div>
+    </div>
+
+    <!-- Setinha no canto para acessar a página -->
+    <a href="#" class="arrow"><i class="fa fa-chevron-up"></i></a>
+    
+    <img src="./img/frames-for-your-heart-GBnMW-6LNbQ-unsplash.jpg" alt="Background Image" class="background-image">
+    
+    <script src="script.js"></script> <!-- Inclua seu arquivo JavaScript -->
 </body>
 </html>

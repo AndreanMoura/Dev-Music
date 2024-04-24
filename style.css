@@ -1,271 +1,264 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(to right,#1d9a42, #1595be);
-    font-weight: bold;
-    animation: changeBackground 10s linear infinite alternate; /* Definindo a animação */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8; /* Cor de fundo padrão */
 }
 
-.player {
-    height: 100vh;
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Garante que a imagem de fundo fique atrás de todos os outros elementos */
+}
+
+.container {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: column; /* Altera a direção do layout para coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    padding: 20px;
+    position: relative; /* Adiciona posição relativa para poder posicionar a imagem do usuário */
 }
 
-.wrapper {
-    border: 1px solid transparent;
-    padding: 15px;
-    border-radius: 20px;
-    background-color: #ddd;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+.user-section {
+    position: absolute; /* Torna a posição absoluta em relação ao container */
+    top: 20px; /* Alinha com um pequeno espaço superior */
+    left: 20px; /* Alinha com um pequeno espaço à esquerda */
 }
 
-.details {
+.user-section img {
+    width: 50px; /* Defina o tamanho desejado para a imagem */
+    height: 50px; /* Defina o tamanho desejado para a imagem */
+    border-radius: 50%; /* Transforma a imagem em um círculo */
+    object-fit: cover; /* Garante que a imagem cubra o círculo completamente */
+}
+
+.content {
+    width: 100%; /* Ocupa toda a largura disponível */
+    max-width: 600px; /* Define uma largura máxima para evitar que o conteúdo se estique muito */
+}
+.best-songs-section {
+    margin-top: 75px; /* Adiciona espaço superior */
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo das seções */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+.best-songs-section,
+.playlist-section {
+    margin-bottom: 25px; /* Adiciona espaço entre as seções */
+    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo das seções */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#best-songs-list {
+    margin-top: 20px; /* Adiciona espaçamento superior */
+}
+
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Estilo para o título da página */
+.page-title {
+    text-align: center; /* Centraliza o texto */
+    margin-top: 50px; /* Espaçamento superior */
+    transition: color 0.5s; /* Efeito de transição de cor */
+}
+
+/* Efeito de troca de cores para o título da página */
+.page-title:hover {
+    color: #04010a; /* Cor ao passar o mouse */
+}
+
+.band-box a {
+    text-decoration: none;
+    color: inherit; /* Mantém a cor do texto padrão */
+}
+
+
+.band-boxes {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.track-art {
-    margin: 15px;
-    height: 150px;
-    width: 150px;
-    border: 2px solid #FFFAFA;
+.band-box {
+    flex: 1 1 calc(33.33% - 20px);
+    margin: 10px;
+    border: 1px solid #9fa0a7;
+    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    text-decoration: none;
     background-size: cover;
     background-position: center;
-    border-radius: 50%;
-    box-shadow: 0px 6px 5px black;
 }
 
-.now-playing {
-    font-size: 0.8rem;
+.band-box:hover {
+    opacity: 0.9;
 }
 
-.track-name {
-    font-size: 1.8rem;
+.band-box h3 {
+    margin: 0;
 }
 
-.track-artist {
-    margin-top: 5px;
-    font-size: 1.2rem;
+.band-box:nth-child(1) {
+    background-image: url('./img/pexels-pixel-krd-10352379\ \(1\).jpg'); /* Substitua 'imagem1.jpg' pelo caminho real da imagem para The Beatles */
 }
 
-.buttons {
+.band-box:nth-child(2) {
+    background-image: url('imagem2.jpg'); /* Substitua 'imagem2.jpg' pelo caminho real da imagem para Led Zeppelin */
+}
+
+.band-box:nth-child(3) {
+    background-image: url('imagem3.jpg'); /* Substitua 'imagem3.jpg' pelo caminho real da imagem para Queen */
+}
+
+/* Adicione estilos para as outras bandas da mesma maneira */
+/* estilo playlist*/
+.playlist-boxes {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 15px;
+    justify-content: space-between;
+    margin-top: 20px;
 }
 
-.active {
-    color: black;
+.playlist-box {
+    width: 100px; /* Largura das caixas de playlist */
+    height: 100px; /* Altura das caixas de playlist */
+    border-radius: 50%; /* Torna as caixas de playlist redondas */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse as bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-size: cover; /* Garante que a imagem de fundo cubra a caixa */
+    background-position: center; /* Centraliza a imagem de fundo na caixa */
 }
 
-.repeat-track,
-.random-track,
-.playpause-track,
-.prev-track,
-.next-track {
-    padding: 15px;
-    opacity: 0.8;
-    transition: opacity .2s;
+.playlist-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
-.repeat-track:hover,
-.random-track:hover,
-.playpause-track:hover,
-.prev-track:hover,
-.next-track:hover {
-    opacity: 1.0;
+.playlist-name {
+    margin: 10px 0;
+    padding: 10px;
+    background-image:url(''); /* Cor de fundo do título da playlist */
+    color: #f8f2f7; /* Cor do texto do título da playlist */
+    text-align: center;
+    border-top-left-radius: 50%; /* Borda superior esquerda arredondada */
+    border-top-right-radius: 50%; /* Borda superior direita arredondada */
 }
 
-.slider_container {
+.music-box {
+    padding: 10px;
+    text-align: center;
+    background-color: #f8f8f8; /* Cor de fundo da caixa de música */
+    color: #000000; /* Cor do texto */
+}
+.playlist-box {
+    width: 100px; /* Largura das caixas de playlist */
+    height: 100px; /* Altura das caixas de playlist */
+    border-radius: 50%; /* Torna as caixas de playlist redondas */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse as bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-size: cover; /* Garante que a imagem de fundo cubra a caixa */
+    background-position: center; /* Centraliza a imagem de fundo na caixa */
+}
+
+.playlist-box:nth-child(1) {
+    background-image: url('./img/Andean_Moura\(IA\).jfif'); /* Adicione o caminho da sua primeira imagem */
+}
+
+.playlist-box:nth-child(2) {
+    background-image: url('./img/pexels-pixel-krd-10352379\ \(1\).jpg'); /* Adicione o caminho da sua segunda imagem */
+}
+
+.playlist-box:nth-child(3) {
+    background-image: url('./img/pexels-pixel-krd-10352379\ \(1\).jpg'); /* Adicione o caminho da sua terceira imagem */
+}
+.new-singles-section {
+    background-color: #3b0caa; /* Cor dark roxa */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin-top: 20px; /* Espaçamento superior */
+    color: #ffffff; /* Cor do texto */
+}
+
+.new-singles-section h2 {
+    margin-top: 0; /* Remove o espaçamento superior do título */
+}
+/*artistas*/
+.artist-box {
+    width: 100px; /* Largura das caixas de artistas */
+    height: 100px; /* Altura das caixas de artistas */
+    border-radius: 10px; /* Borda arredondada */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse as bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-size: cover; /* Cobrir toda a área com a imagem */
+    background-position: center; /* Centralizar a imagem */
+}
+
+.artist-box:nth-child(1) {
+    background-image: url('./caminho/para/sua/imagem1.jpg'); /* Substitua pelo caminho da imagem do Artista 1 */
+}
+
+.artist-box:nth-child(2) {
+    background-image: url('./caminho/para/sua/imagem2.jpg'); /* Substitua pelo caminho da imagem do Artista 2 */
+}
+
+.artist-box:nth-child(3) {
+    background-image: url('./caminho/para/sua/imagem3.jpg'); /* Substitua pelo caminho da imagem do Artista 3 */
+}
+.most-played-section {
+    background-color: #330066; /* Cor de fundo dark roxo */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    margin-top: 20px;
+}
+
+.artist-boxes {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 }
 
-.seek_slider,
-.volume_slider {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    height: 5px;
-    background: #83A9FF;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
+.artist-box {
+    width: 100px; /* Largura das caixas de playlist */
+    height: 100px; /* Altura das caixas de playlist */
+    border-radius: 50%; /* Torna as caixas de playlist redondas */
+    overflow: hidden; /* Evita que o conteúdo ultrapasse as bordas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-size: cover; /* Garante que a imagem de fundo cubra a caixa */
+    background-position: center;
 }
 
-.seek_slider::-webkit-slider-thumb,
-.volume_slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border: 2px solid #3774FF;
-    cursor: grab;
-    border-radius: 100%;
+.artist-box img {
+    width: 100px; /* Define a largura das imagens dos artistas */
+    height: 100px; /* Define a altura das imagens dos artistas */
+    border-radius: 50%; /* Torna as imagens dos artistas redondas */
+    object-fit: cover; /* Ajusta o dimensionamento da imagem */
+    margin-bottom: 10px; /* Adiciona espaçamento inferior entre a imagem e o título */
 }
 
-.seek_slider:hover,
-.volume_slider:hover {
-    opacity: 1.0;
+.artist-box h3 {
+    margin: 0; /* Remove margem do título */
 }
-
-.seek_slider {
-    width: 80%;
-}
-
-.volume_slider {
-    width: 60%;
-}
-
-.current-time,
-.total-duration {
-    padding: 5px;
-}
-
-i.fa-volume-down,
-i.fa-volume-up {
-    padding: 5px;
-}
-
-i,
-i.fa-play-circle,
-i.fa-pause-circle,
-i.fa-step-forward,
-i.fa-step-backward,
-p {
-    cursor: pointer;
-}
-
-.randomActive {
-    color: black;
-}
-
-.rotate {
-    animation: rotation 8s infinite linear;
-}
-
-@keyframes rotation {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(359deg);
-    }
-}
-
-.loader {
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.loader .stroke {
-    background: #f1f1f1;
-    height: 120%;
-    width: 5px;
-    border-radius: 50px;
-    margin: 0 2px;
-    animation: animate 1.4s linear infinite;
-}
-
-@keyframes animate {
-    50% {
-        height: 20%;
-        background: #401ac9;
-    }
-
-    100% {
-        background: #4286f4;
-        height: 100%;
-    }
-}
-
-.stroke:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.stroke:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.stroke:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-.stroke:nth-child(4) {
-    animation-delay: 0.6s;
-}
-
-.stroke:nth-child(5) {
-    animation-delay: 0.4s;
-}
-
-.stroke:nth-child(6) {
-    animation-delay: 0.2s;
-}
-
-.stroke:nth-child(7) {
-    animation-delay: 0s;
-}
-
-@media screen and (max-width: 768px) {
-    .player {
-        height: auto;
-    }
-    .track-art {
-        height: 100px;
-        width: 100px;
-    }
-    .now-playing {
-        font-size: 0.6rem;
-    }
-    .track-name {
-        font-size: 1.4rem;
-    }
-    .track-artist {
-        font-size: 1rem;
-    }
-    .buttons {
-        margin-bottom: 10px;
-    }
-    .seek_slider {
-        width: 90%;
-    }
-    .volume_slider {
-        width: 70%;
-    }
-    .current-time,
-    .total-duration {
-        padding: 3px;
-    }
-    i.fa-volume-down,
-    i.fa-volume-up {
-        padding: 3px;
-    }
-    .loader {
-        height: 40px;
-    }
-    .loader .stroke {
-        width: 3px;
-    }
-}
-
-@keyframes changeBackground {
-    0% {
-        background: linear-gradient(to right,#1d9a42, #1595be); /* Cor inicial */
-    }
-    50% {
-        background: linear-gradient(to right,#6c15be, #050201); /* Cor intermediária */
-    }
-    100% {
-        background: linear-gradient(to right,#0b26be, #da0b15); /* Cor final */
-    }
+h2 a {
+    display: block;
+    text-align: center; /* Centraliza o texto */
+    color: #000000; /* Cor preta */
+    text-decoration: none; /* Remove sublinhado */
 }

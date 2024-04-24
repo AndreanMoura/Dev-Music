@@ -20,6 +20,44 @@ let isPlaying = false;
 let isRandom = false;
 let updateTimer;
 
+// Seleciona o título da página
+const pageTitle = document.querySelector('.page-title');
+
+// Array de cores para a animação
+const colors = ['#000000', '#4F4F4F', '#7d3cff', '#00a1ff', '#00ff68'];
+
+let index = 0; // Índice da cor atual
+
+// Função para alternar as cores letra por letra automaticamente
+function changeColor() {
+    const titleText = pageTitle.textContent; // Obtém o texto do título
+    let coloredTitle = ''; // String para armazenar o título colorido
+
+    // Itera sobre cada letra do título
+    for (let i = 0; i < titleText.length; i++) {
+        // Calcula o índice da cor usando o índice atual e o comprimento do array de cores
+        const colorIndex = (index + i) % colors.length;
+        // Obtém a cor atual
+        const color = colors[colorIndex];
+        // Adiciona a letra com a cor ao título colorido
+        coloredTitle += `<span style="color: ${color};">${titleText[i]}</span>`;
+    }
+
+    // Define o título colorido na página
+    pageTitle.innerHTML = coloredTitle;
+
+    // Atualiza o índice de cor para a próxima iteração
+    index = (index + 1) % colors.length;
+
+    // Chama a função novamente após 0.2 segundos
+    setTimeout(changeColor, 200); // Altera a cor a cada 0.2 segundos
+}
+
+// Chama a função para iniciar a animação
+changeColor();
+
+
+
 const music_list = [
     {
         img : 'img/vinil.png.jpg',
