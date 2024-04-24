@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right,#1d9a42, #1595be);
+    font-weight: bold;
+    animation: changeBackground 10s linear infinite alternate; /* Definindo a animação */
+}
+
+.player {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper {
+    border: 1px solid transparent;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #ddd;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.track-art {
+    margin: 15px;
+    height: 150px;
+    width: 150px;
+    border: 2px solid #FFFAFA;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0px 6px 5px black;
+}
+
+.now-playing {
+    font-size: 0.8rem;
+}
+
+.track-name {
+    font-size: 1.8rem;
+}
+
+.track-artist {
+    margin-top: 5px;
+    font-size: 1.2rem;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.active {
+    color: black;
+}
+
+.repeat-track,
+.random-track,
+.playpause-track,
+.prev-track,
+.next-track {
+    padding: 15px;
+    opacity: 0.8;
+    transition: opacity .2s;
+}
+
+.repeat-track:hover,
+.random-track:hover,
+.playpause-track:hover,
+.prev-track:hover,
+.next-track:hover {
+    opacity: 1.0;
+}
+
+.slider_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seek_slider,
+.volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #83A9FF;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.seek_slider::-webkit-slider-thumb,
+.volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border: 2px solid #3774FF;
+    cursor: grab;
+    border-radius: 100%;
+}
+
+.seek_slider:hover,
+.volume_slider:hover {
+    opacity: 1.0;
+}
+
+.seek_slider {
+    width: 80%;
+}
+
+.volume_slider {
+    width: 60%;
+}
+
+.current-time,
+.total-duration {
+    padding: 5px;
+}
+
+i.fa-volume-down,
+i.fa-volume-up {
+    padding: 5px;
+}
+
+i,
+i.fa-play-circle,
+i.fa-pause-circle,
+i.fa-step-forward,
+i.fa-step-backward,
+p {
+    cursor: pointer;
+}
+
+.randomActive {
+    color: black;
+}
+
+.rotate {
+    animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.loader {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader .stroke {
+    background: #f1f1f1;
+    height: 120%;
+    width: 5px;
+    border-radius: 50px;
+    margin: 0 2px;
+    animation: animate 1.4s linear infinite;
+}
+
+@keyframes animate {
+    50% {
+        height: 20%;
+        background: #401ac9;
+    }
+
+    100% {
+        background: #4286f4;
+        height: 100%;
+    }
+}
+
+.stroke:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.stroke:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.stroke:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.stroke:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+.stroke:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+.stroke:nth-child(6) {
+    animation-delay: 0.2s;
+}
+
+.stroke:nth-child(7) {
+    animation-delay: 0s;
+}
+
+@media screen and (max-width: 768px) {
+    .player {
+        height: auto;
+    }
+    .track-art {
+        height: 100px;
+        width: 100px;
+    }
+    .now-playing {
+        font-size: 0.6rem;
+    }
+    .track-name {
+        font-size: 1.4rem;
+    }
+    .track-artist {
+        font-size: 1rem;
+    }
+    .buttons {
+        margin-bottom: 10px;
+    }
+    .seek_slider {
+        width: 90%;
+    }
+    .volume_slider {
+        width: 70%;
+    }
+    .current-time,
+    .total-duration {
+        padding: 3px;
+    }
+    i.fa-volume-down,
+    i.fa-volume-up {
+        padding: 3px;
+    }
+    .loader {
+        height: 40px;
+    }
+    .loader .stroke {
+        width: 3px;
+    }
+}
+
+@keyframes changeBackground {
+    0% {
+        background: linear-gradient(to right,#1d9a42, #1595be); /* Cor inicial */
+    }
+    50% {
+        background: linear-gradient(to right,#6c15be, #050201); /* Cor intermediária */
+    }
+    100% {
+        background: linear-gradient(to right,#0b26be, #da0b15); /* Cor final */
+    }
+}
