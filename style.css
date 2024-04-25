@@ -188,7 +188,7 @@ li {
 .music-box {
     padding: 10px;
     text-align: center;
-    background-color: #f8f8f8; /* Cor de fundo da caixa de música */
+   ; /* Cor de fundo da caixa de música */
     color: #000000; /* Cor do texto */
 }
 .playlist-box {
