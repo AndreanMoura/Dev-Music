@@ -41,7 +41,7 @@ body {
 }
 .best-songs-section {
     margin-top: 75px; /* Adiciona espaço superior */
-    background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo das seções */
+    background-color: rgba(182, 16, 16, 0.8); /* Cor de fundo das seções */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
@@ -283,4 +283,14 @@ h2 a {
     text-align: center; /* Centraliza o texto */
     color: #000000; /* Cor preta */
     text-decoration: none; /* Remove sublinhado */
+}
+.audio-controls {
+    position: fixed; /* ou absolute, dependendo do comportamento desejado */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121d80; /* Cor de fundo dos controles de áudio */
+    padding: 10px; /* Espaçamento interno */
+    box-shadow: 0 -2px 5px rgba(187, 25, 25, 0.1); /* Sombra suave */
+    z-index: 999; /* Garante que os controles fiquem sempre acima de outros elementos */
 }
