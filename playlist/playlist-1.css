@@ -86,6 +86,31 @@ html, body {
     border-radius: 50%;
 }
 
-.audio-player {
-    margin-bottom: 20px;
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls button {
+    background-color: #3498db; /* Cor de fundo dos botões */
+    color: #fff; /* Cor do ícone */
+    border: none;
+    border-radius: 50%; /* Bordas arredondadas para criar um botão circular */
+    width: 40px; /* Largura do botão */
+    height: 40px; /* Altura do botão */
+    margin: 0 5px; /* Margem entre os botões */
+    cursor: pointer; /* Cursor ao passar por cima */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+.controls button:hover {
+    background-color: #0a293d; /* Cor de fundo dos botões ao passar o mouse */
+}
+
+/* Estilos para os ícones */
+.controls button i {
+    font-size: 20px; /* Tamanho do ícone */
+    line-height: 40px; /* Centraliza verticalmente o ícone */
+    margin-left: 2px; /* Ajuste fino da posição do ícone */
 }
