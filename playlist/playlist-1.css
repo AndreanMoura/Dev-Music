@@ -1,0 +1,91 @@
+html, body {
+    height: 100%; /* Defina a altura do corpo e do HTML para ocupar toda a altura da janela */
+    margin: 0; /* Remova as margens padrão */
+    display: flex; /* Ative o layout flexível */
+    justify-content: center; /* Centralize o conteúdo horizontalmente */
+    align-items: center; /* Centralize o conteúdo verticalmente */
+    background-color: #111111;
+}
+
+.header {
+    position: relative; /* Para posicionamento relativo */
+    width: 200px; /* Largura da imagem */
+    height: 200px; /* Altura da imagem */
+    border-radius: 50%; /* Torna a imagem redonda */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites da imagem */
+    display: flex; /* Ativa o layout flexbox */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+}
+
+.header img {
+    width: 100%; /* Garante que a imagem cubra todo o espaço disponível */
+    height: 100%; /* Garante que a imagem cubra todo o espaço disponível */
+    object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível */
+    border-radius: 50%; /* Torna a imagem redonda */
+}
+
+.header::before {
+    content: ''; /* Adiciona um pseudo-elemento */
+    position: absolute; /* Para posicionamento absoluto em relação ao pai */
+    top: 0; /* Alinha na parte superior */
+    left: 0; /* Alinha na parte esquerda */
+    width: 100%; /* Largura igual à do pai */
+    height: 100%; /* Altura igual à do pai */
+    background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo preto com transparência */
+    border-radius: 50%; /* Torna o fundo preto redondo */
+}
+
+
+
+.audio-player {
+    margin-bottom: 20px;
+}
+
+.music-list h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.music-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.music-list li {
+    margin-bottom: 10px;
+}
+
+.music-list li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.music-list li a:hover {
+    color: #666;
+}
+/* Estilos gerais */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens no centro horizontalmente */
+}
+
+.header {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Adiciona um espaço entre a foto de perfil e os controles de áudio */
+}
+
+.header img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.audio-player {
+    margin-bottom: 20px;
+}
