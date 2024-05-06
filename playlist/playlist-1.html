@@ -3,52 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player</title>
+    <title>Black Sabbath</title>
     <link rel="stylesheet" href="playlist-1.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 <body>
-    <div class="container">
-        <!-- Parte superior com a foto -->
-        <div class="header">
-            <img src="./img/pexels-cottonbro-4629625.jpg" alt="Foto de perfil">
+    <div class="background-image">
+        <!-- Aqui você pode inserir o conteúdo da página -->
+        <div class="content">
+            <img src="./img/Black Sabbath (1).jfif" alt="Banda de Rock" class="sabbath">
+            <h1>História da Banda</h1>
+            <p>Aqui você pode escrever a história da banda, detalhando sua origem, membros, sucessos, etc.</p>
+            <h2>Músicas da Banda</h2>
+            <ul class="music-list">
+               
+            </ul>
         </div>
-        
-        <!-- Reprodutor de músicas -->
-        <div class="audio-player">
-            <audio controls id="audio-player">
-                
-                <!-- Source tags serão adicionadas aqui dinamicamente -->
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <!-- Controles do player -->
-            <div class="controls">
-                <button id="prev-btn"><i class="fas fa-backward"></i></button>
-                <button id="play-btn"><i class="fas fa-play"></i></button>
-                <button id="pause-btn"><i class="fas fa-pause"></i></button>
-                <button id="stop-btn"><i class="fas fa-stop"></i></button>
-                <button id="next-btn"><i class="fas fa-forward"></i></button>
-            </div>
-            
-            
-        </div>
-
-
-        <div class="music-list">
-            <div class="your-music">
-                <h2>Suas músicas</h2>
-                <ul id="musicList">
-                    <!-- Aqui serão adicionadas as músicas dinamicamente -->
-                </ul>
-            </div>
-        </div>
-        
-        
-        
     </div>
+    
+    <!-- Reprodutor de música -->
+    <div id="app-cover">
+            <div id="player-controls">
+                <div class="control" id="play-previous">
+                    <div class="button">
+                        <i class="fas fa-backward"></i>
+                    </div>
+                </div>
+                <div class="control" id="play-pause-button">
+                    <div class="button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="control" id="play-next">
+                    <div class="button">
+                        <i class="fas fa-forward"></i>
+                    </div>
+                </div>
+            </div>
+            <div id="player-track">
+                <!-- Aqui você pode adicionar mais elementos relacionados à faixa atual, como nome da faixa, tempo de reprodução, etc. -->
+            </div>
+    </div>
+    
 
-    <script src="playlist-1.js"></script>
+    <!-- Inclua o script do reprodutor de música -->
+    <script src="playlist1.js"></script>
 </body>
 </html>

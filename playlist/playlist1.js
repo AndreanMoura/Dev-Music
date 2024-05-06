@@ -1,33 +1,43 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const musicList = document.getElementById('musicList');
+    const artistTracks = {
+        "Black Sabbath": [
+            "Black Sabbath - Loner.mp3",
+            "Black Sabbath - Heaven and Hell.mp3",
+            "Black Sabbath - War Pigs.mp3"
+        ],
+        "AC/DC": [
+            "ACDC - Back In Black.mp3",
+            "ACDC - Highway to Hell.mp3",
+            "ACDC - Thunderstruck.mp3"
+        ],
+        // Adicione mais artistas e suas músicas aqui conforme necessário
+    };
 
-    // URL da pasta contendo as músicas do Black Sabbath
-    const blackSabbathFolder = './playlist/musicas/black_sabbath/';
+    const plList = document.querySelector('.music-list');
+    const audioPlayer = document.getElementById('audioPlayer');
 
-    // Função para carregar e exibir as músicas do Black Sabbath
-    function loadBlackSabbathSongs() {
-        fetch(blackSabbathFolder)
-            .then(response => response.text())
-            .then(data => {
-                // Parse o HTML retornado como texto para obter uma lista de links
-                const parser = new DOMParser();
-                const htmlDocument = parser.parseFromString(data, 'text/html');
-                const links = htmlDocument.querySelectorAll('a');
+    // Função para adicionar músicas de um artista à lista de reprodução
+    function addArtistTracks(artist) {
+        const tracks = artistTracks[artist];
+        plList.innerHTML = ''; // Limpa a lista de músicas antes de adicionar novas
 
-                // Limpa a lista atual de músicas
-                musicList.innerHTML = '';
-
-                // Adiciona cada música como um item de lista na lista de músicas
-                links.forEach(link => {
-                    const listItem = document.createElement('li');
-                    const musicName = link.textContent;
-                    listItem.textContent = musicName;
-                    musicList.appendChild(listItem);
-                });
-            })
-            .catch(error => console.error('Ocorreu um erro ao carregar as músicas do Black Sabbath:', error));
+        tracks.forEach(track => {
+            const listItem = document.createElement('li');
+            listItem.textContent = track;
+            listItem.addEventListener('click', function() {
+                const audioSource = `./musicas/${artist}/${track}`;
+                playAudio(audioSource);
+            });
+            plList.appendChild(listItem);
+        });
     }
 
-    // Carrega e exibe as músicas do Black Sabbath quando a página é carregada
-    loadBlackSabbathSongs();
+    // Função para reproduzir áudio
+    function playAudio(source) {
+        audioPlayer.src = source;
+        audioPlayer.play();
+    }
+
+    // Exemplo de como adicionar as músicas de um artista
+    addArtistTracks("Black Sabbath");
 });

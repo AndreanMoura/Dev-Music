@@ -1,53 +1,31 @@
-html, body {
-    height: 100%; /* Defina a altura do corpo e do HTML para ocupar toda a altura da janela */
-    margin: 0; /* Remova as margens padrão */
-    display: flex; /* Ative o layout flexível */
-    justify-content: center; /* Centralize o conteúdo horizontalmente */
-    align-items: center; /* Centralize o conteúdo verticalmente */
-    background-color: #111111;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.header {
-    position: relative; /* Para posicionamento relativo */
-    width: 200px; /* Largura da imagem */
-    height: 200px; /* Altura da imagem */
-    border-radius: 50%; /* Torna a imagem redonda */
-    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites da imagem */
-    display: flex; /* Ativa o layout flexbox */
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+.background-image {
+    background-image: url('./img/max-kleinen-Rr1uLDXzCYg-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 
-.header img {
-    width: 100%; /* Garante que a imagem cubra todo o espaço disponível */
-    height: 100%; /* Garante que a imagem cubra todo o espaço disponível */
-    object-fit: cover; /* Garante que a imagem cubra todo o espaço disponível */
-    border-radius: 50%; /* Torna a imagem redonda */
+.content {
+    text-align: center;
 }
 
-.header::before {
-    content: ''; /* Adiciona um pseudo-elemento */
-    position: absolute; /* Para posicionamento absoluto em relação ao pai */
-    top: 0; /* Alinha na parte superior */
-    left: 0; /* Alinha na parte esquerda */
-    width: 100%; /* Largura igual à do pai */
-    height: 100%; /* Altura igual à do pai */
-    background-color: rgba(0, 0, 0, 0.5); /* Cor do fundo preto com transparência */
-    border-radius: 50%; /* Torna o fundo preto redondo */
-}
-
-
-
-.audio-player {
+.content img {
+    max-width: 100%;
+    height: auto;
     margin-bottom: 20px;
 }
 
-.music-list h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
-}
-
-.music-list ul {
+.music-list {
     list-style: none;
     padding: 0;
 }
@@ -56,61 +34,22 @@ html, body {
     margin-bottom: 10px;
 }
 
-.music-list li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
+/* Media query para dispositivos com largura máxima de 768px (tablets e dispositivos móveis) */
+@media only screen and (max-width: 768px) {
+    .background-image {
+        background-size: contain; /* Altera o tamanho da imagem de fundo para "contain" para garantir que ela caiba na tela */
+    }
+
+    .content {
+        padding: 20px; /* Adiciona um preenchimento interno ao conteúdo */
+    }
+
+    .music-list li {
+        font-size: 18px; /* Reduz o tamanho da fonte para a lista de músicas */
+    }
 }
 
-.music-list li a:hover {
-    color: #666;
-}
-/* Estilos gerais */
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Alinha os itens no centro horizontalmente */
-}
-
-.header {
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Adiciona um espaço entre a foto de perfil e os controles de áudio */
-}
-
-.header img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-}
-
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.controls button {
-    background-color: #3498db; /* Cor de fundo dos botões */
-    color: #fff; /* Cor do ícone */
-    border: none;
-    border-radius: 50%; /* Bordas arredondadas para criar um botão circular */
-    width: 40px; /* Largura do botão */
-    height: 40px; /* Altura do botão */
-    margin: 0 5px; /* Margem entre os botões */
-    cursor: pointer; /* Cursor ao passar por cima */
-    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
-}
-
-.controls button:hover {
-    background-color: #0a293d; /* Cor de fundo dos botões ao passar o mouse */
-}
-
-/* Estilos para os ícones */
-.controls button i {
-    font-size: 20px; /* Tamanho do ícone */
-    line-height: 40px; /* Centraliza verticalmente o ícone */
-    margin-left: 2px; /* Ajuste fino da posição do ícone */
+.sabbath{
+    width: 250px;
+    margin-top: 20px;
 }
