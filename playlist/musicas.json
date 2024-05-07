@@ -1,0 +1,17 @@
+{
+    "musicas": [
+        {
+            "nome": "Loner",
+            "caminho": "./musicas/black sabbath/Black Sabbath - Loner.mp3"
+        },
+        {
+            "nome": "Heaven and Hell",
+            "caminho": "musicas/black sabbath/Black Sabbath - Heaven and Hell.mp3"
+        },
+        {
+            "nome": "War Pigs",
+            "caminho": "./musicas/black_sabbath/War_Pigs.mp3"
+        }
+        
+    ]
+}

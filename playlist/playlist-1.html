@@ -3,49 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Sabbath</title>
+    <title>Reprodutor de Música</title>
     <link rel="stylesheet" href="playlist-1.css">
 </head>
 <body>
-    <div class="background-image">
-        <!-- Aqui você pode inserir o conteúdo da página -->
-        <div class="content">
-            <img src="./img/Black Sabbath (1).jfif" alt="Banda de Rock" class="sabbath">
-            <h1>História da Banda</h1>
-            <p>Aqui você pode escrever a história da banda, detalhando sua origem, membros, sucessos, etc.</p>
-            <h2>Músicas da Banda</h2>
-            <ul class="music-list">
-               
-            </ul>
+    <div class="band-info">
+        <h1>Black Sabbath</h1>
+        <h2>História da Banda</h2>
+        <p>Black Sabbath foi uma banda de heavy metal britânica formada no ano de 1968 em Birmingham <br> pelo guitarrista e principal compositor Tony Iommi,<br> o baixista e principal letrista Geezer Butler,<br> o vocalista Ozzy Osbourne e o baterista Bill Ward.</p>
+    </div>
+
+    <div class="player-container">
+        <img src="./img/Black Sabbath (1).jfif" alt="Imagem de Fundo" class="background-image">
+        <audio id="audioPlayer" src=""></audio>
+        <div class="controls">
+            <button class="play-button">▶️</button>
+            <button class="pause-button">⏸️</button>
+            <button class="stop-button">⏹️</button>
+            <button class="skip-backward-button">⏮️</button>
+            <button class="skip-forward-button">⏭️</button>
+            <button class="mute-button">🔇</button>
+            <input type="range" id="seekControl" min="0" value="0">
+            <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
         </div>
     </div>
-    
-    <!-- Reprodutor de música -->
-    <div id="app-cover">
-            <div id="player-controls">
-                <div class="control" id="play-previous">
-                    <div class="button">
-                        <i class="fas fa-backward"></i>
-                    </div>
-                </div>
-                <div class="control" id="play-pause-button">
-                    <div class="button">
-                        <i class="fas fa-play"></i>
-                    </div>
-                </div>
-                <div class="control" id="play-next">
-                    <div class="button">
-                        <i class="fas fa-forward"></i>
-                    </div>
-                </div>
-            </div>
-            <div id="player-track">
-                <!-- Aqui você pode adicionar mais elementos relacionados à faixa atual, como nome da faixa, tempo de reprodução, etc. -->
-            </div>
+    <div class="music-container">
+        <h2 class="tutu">Musicas</h2>
+        <ul class="music-list">
+            <!-- Lista de músicas será adicionada aqui dinamicamente pelo JavaScript -->
+        </ul>
     </div>
-    
-
-    <!-- Inclua o script do reprodutor de música -->
     <script src="playlist1.js"></script>
 </body>
 </html>
