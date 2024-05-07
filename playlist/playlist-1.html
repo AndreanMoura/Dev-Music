@@ -8,13 +8,18 @@
 </head>
 <body>
     <div class="band-info">
+        <img src="./img/Black Sabbath (1).jfif" alt="Imagem da Banda">
         <h1>Black Sabbath</h1>
         <h2>História da Banda</h2>
         <p>Black Sabbath foi uma banda de heavy metal britânica formada no ano de 1968 em Birmingham <br> pelo guitarrista e principal compositor Tony Iommi,<br> o baixista e principal letrista Geezer Butler,<br> o vocalista Ozzy Osbourne e o baterista Bill Ward.</p>
     </div>
-
+    <div class="music-container">
+        <h2 class="tutu">Musicas</h2>
+        <ul class="music-list">
+            <!-- Lista de músicas será adicionada aqui dinamicamente pelo JavaScript -->
+        </ul>
+    </div>
     <div class="player-container">
-        <img src="./img/Black Sabbath (1).jfif" alt="Imagem de Fundo" class="background-image">
         <audio id="audioPlayer" src=""></audio>
         <div class="controls">
             <button class="play-button">▶️</button>
@@ -26,12 +31,6 @@
             <input type="range" id="seekControl" min="0" value="0">
             <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
         </div>
-    </div>
-    <div class="music-container">
-        <h2 class="tutu">Musicas</h2>
-        <ul class="music-list">
-            <!-- Lista de músicas será adicionada aqui dinamicamente pelo JavaScript -->
-        </ul>
     </div>
     <script src="playlist1.js"></script>
 </body>

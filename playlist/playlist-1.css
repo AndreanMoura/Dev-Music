@@ -2,16 +2,45 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-image: url('./img/max-kleinen-Rr1uLDXzCYg-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.band-info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-    background-image: url('./img/max-kleinen-Rr1uLDXzCYg-unsplash.jpg'); /* Adiciona a imagem de fundo */
-    background-size: cover; /* Redimensiona a imagem de fundo para cobrir todo o container */
-    background-position: center; /* Centraliza a imagem de fundo */
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #e6dedeaf;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(207, 202, 202, 0.1);
+}
+
+.band-info img {
+    border-radius: 50%;
+    width: 200px; /* Ajuste conforme necessário */
+    height: 200px; /* Ajuste conforme necessário */
+    margin-bottom: 20px;
+}
+
+
+.band-info h1 {
+    font-size: 24px bold;
+    margin-bottom: 25px;
+}
+
+.band-info h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.band-info p {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .player-container {
@@ -19,164 +48,55 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.controls {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 300px;
-    height: 100%;
-    margin: 0 auto; /* Define as margens laterais como "auto" para centralizar */
-    overflow: hidden;
-    background-color: white; /* Adiciona preenchimento branco */
-    background-image: url('./img/sufyan-eRpeXTJEgMw-unsplash.jpg'); /* Adiciona imagem de vinil de fundo */
-    background-size: cover; /* Redimensiona a imagem para cobrir todo o controle */
-    border-radius: 10px; /* Adiciona bordas arredondadas */
-    padding: 10px; /* Adiciona um espaçamento interno */
-}
-
-
-
-button {
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-input[type="range"] {
-    width: 100px;
-    margin: 0 10px;
-}
-
-#currentTime {
-    font-size: 12px;
-    color: #990606; /* Define a cor do texto */
-    font-family: Arial, sans-serif; /* Define a família da fonte */
-    font-size: 14px; /* Define o tamanho da fonte */
-    font-weight: bold; /* Define a espessura da fonte */
-    text-transform: uppercase; /* Converte o texto para maiúsculas */
-}
-
-#duration {
-    color: #990606; /* Define a cor do texto */
-    font-family: Arial, sans-serif; /* Define a família da fonte */
-    font-size: 14px; /* Define o tamanho da fonte */
-    font-weight: bold; /* Define a espessura da fonte */
-    text-transform: uppercase; /* Converte o texto para maiúsculas */
+    margin-bottom: 20px;
 }
 
 .background-image {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0; /* Arredonda apenas os cantos superiores */
-    margin-bottom: 20px; /* Adiciona um espaço entre a imagem e os controles */
-    max-width: 400px; /* Define a largura máxima da imagem */
-    max-height: 300px; /* Define a altura máxima da imagem */
-    display: block; /* Certifica-se de que a imagem seja exibida como bloco */
-    object-fit: cover; /* Mantém a proporção da imagem e a corta para preencher o contêiner */
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+    object-fit: cover;
 }
 
-.tutu{
+.controls {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
 }
-/* Botão de reprodução */
-.play-button {
-    background-color: transparent;
+
+.controls button {
     border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Botão de pausa */
-.pause-button {
     background-color: transparent;
-    border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 24px;
+    color: #413939;
 }
 
-/* Botão de parar */
-.stop-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Botão de avançar */
-.skip-forward-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Botão de retroceder */
-.skip-backward-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Botão de aumentar volume */
-.volume-up-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Botão de diminuir volume */
-.volume-down-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-/* Botão de mudo */
-.mute-button {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
-.music-list li a {
-    color: #ffffffe0;
-    margin-bottom: 10px;
-    text-decoration: none; /* Remove sublinhado dos links */
-}
-.band-info {
-    padding: 20px; /* Adiciona um espaçamento interno */
-    background-color: rgba(255, 255, 255, 0.5); /* Fundo semi-transparente */
-    border-radius: 10px; /* Borda arredondada */
-    text-align: center; /* Centraliza o conteúdo */
-    margin-right: 20px;
-}
-
-.band-info h1 {
-    font-size: 24px; /* Tamanho de fonte maior para o título */
-    margin-bottom: 10px; /* Adiciona espaço abaixo do título */
-}
-
-.band-info h2 {
-    font-size: 20px; /* Tamanho de fonte maior para o subtítulo */
-    margin-top: 0; /* Remove o espaço superior do subtítulo */
-}
-
-.band-info p {
-    font-size: 16px; /* Tamanho de fonte padrão para o texto */
-    line-height: 1.5; /* Espaçamento entre linhas */
-}
 .music-container {
     background-color: #413939;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.music-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.music-list li {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.tutu {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 35px;
 }
